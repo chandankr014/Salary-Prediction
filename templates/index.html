@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Model Prediction</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+        }
+
+        form {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Salary Prediction</h1>
+    <form method="POST" action="{{ url_for('predict') }}">
+        <label for="feature1">Minimum Salary:</label>
+        <input type="text" name="feature1" id="feature1" required value="{{ request.form['feature1'] if 'feature1' in request.form else '' }}"><br>
+        
+        <label for="feature2">Maximum Salary:</label>
+        <input type="text" name="feature2" id="feature2" required value="{{ request.form['feature2'] if 'feature2' in request.form else '' }}"><br>
+        
+        <label for="feature3">Average Experience:</label>
+        <input type="text" name="feature3" id="feature3" required value="{{ request.form['feature3'] if 'feature3' in request.form else '' }}"><br>
+        
+        <label for="feature4">Job Label:</label>
+        <input type="text" name="feature4" id="feature4" required value="{{ request.form['feature4'] if 'feature4' in request.form else '' }}"><br>
+        
+        <label for="feature5">Company (in smallcase):</label>
+        <input type="text" name="feature5" id="feature5" required value="{{ request.form['feature5'] if 'feature5' in request.form else '' }}"><br>
+        
+        <input type="submit" value="Predict">
+    </form>
+    <!--  -->
+    <h1>{{ prediction }}</h1>
+
+</body>
+</html>
