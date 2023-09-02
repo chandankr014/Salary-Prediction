@@ -25,7 +25,7 @@ The project structure is organized as follows:
 1. **Clone the Repository:**
 
     ```
-    git clone `https://github.com/chandankr014/Salary-Prediction.git`
+    git clone https://github.com/chandankr014/Salary-Prediction.git
     ```
 
 2. **Install Dependencies:**
@@ -84,7 +84,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Author
 
-- Chandan (Your Name)
-- Contact: your@email.com
+- Chandan Kumar
+- Contact: chandankr014@email.com
 
 ---
